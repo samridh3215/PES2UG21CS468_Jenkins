@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Compile the .cpp file using a shell script
+                build 'PES2UG21CS468-1'
                 sh 'g++ -o PES2UG21CS468-1 hello.cpp'
             }
         }
@@ -16,11 +17,11 @@ pipeline {
             }
         }
 
-        // stage('Deploy') {
-        //     steps {
-              
-        //     }
-        // }
+        stage('Deploy') {
+            steps {
+              echo 'deploy'
+            }
+        }
     }
 
     post {
